@@ -21,7 +21,7 @@ This is a browser application which consists of a multiple choice quiz on JavaSc
     THEN I can save my initials and score
 
 ## ScreenShot
-
+![timed-quiz-screenshot](timed%20quiz%20screenshot.png)
 
 ## live Site
 

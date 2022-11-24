@@ -1,4 +1,5 @@
 
+// declare global variables
 
 var myNav = document.querySelector('mynav')
 var timerEl = document.getElementById('timer');
@@ -20,6 +21,9 @@ var questionArray = 0;
 var timeLeft = 75;
 
 var newScore = 0
+
+// defines the question content for the quiz 
+
 var questions = [
     {
         question: "What is Javascript?",
@@ -53,6 +57,7 @@ var questions = [
     }
 ];
 
+//  checks answer for the questions. once question is answered, it goes to the next question until completed
     function checkAnswer() {
         if (this.value === questions[questionArray].answer) {
             alert("That's right!")
@@ -75,6 +80,8 @@ var questions = [
         }
     }
     
+    // renders the questions unto the page
+
     function renderQuestions() {
         var newQuestion = questions[questionArray];
         questionList.textContent = newQuestion.question;
@@ -87,6 +94,8 @@ var questions = [
         li.setAttribute("class", "answerBtn")
     });
 }
+
+// once all questions have been answered, the game has ended and user is prompted to input initials
 
 function gameOver() {
     clearInterval(countdownTimer);
@@ -125,6 +134,7 @@ submitBtn.addEventListener('click', function(){
     
 }
 
+// event listener that starts the program 
 
 startBtn.addEventListener("click", function() {
 

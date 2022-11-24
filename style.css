@@ -76,3 +76,21 @@ footer {
   width: 100%;
   background-color: white;
 }
+
+.content-container {
+    max-width: 50%;
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.answerBtn {
+    width: max-content;
+    size: 20px;
+    font-size: large;
+    margin: 5px;
+    background-color: rgb(59, 100, 106);
+    color: aliceblue;
+}

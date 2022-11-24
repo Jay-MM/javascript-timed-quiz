@@ -14,7 +14,7 @@
     <nav>
         <ul>
             <div class="mynav">
-                <li><a id="highscores" href="highscores.html">View Highscores</a></li>
+                <li id="highscores"><a id="highscore" href="#"> Highscores</a></li>
             </div>
                 <li id="timer">Time: 0</li>
         </ul>
@@ -23,24 +23,27 @@
 </header>
 <main >
     <div id="mainContent">
-        <h1>Welcome to This Timed Quiz on JavaScript Fundamentals.
+        <h1 id ="h1">Welcome to This Timed Quiz on JavaScript Fundamentals.
         </h1>
-            <p>You will have 75 seconds to submit all answers.
-            </p> 
-            <p>If you answer incorrectly, you will get docked 10 seconds.
-            </p>
-            <p>Click Start to begin    
-            </p>
-            <p>Good Luck!
+            <p id ="p">You will have 75 seconds to submit all answers.
+            <br>
+                If you answer incorrectly, you will get docked 10 seconds.
+            <br>
+                Click Start to begin    
+            <br>
+                Good Luck!
             </p>
     </div>
-    <div>
+    <div id = button>
         <button id="startBtn">Start Quiz</button> 
     </div>
     
     
 </main>
-    <footer>How well did you do? Make sure to check out the <a id="highscores" href="highscores.html">highscores</a>!</footer>
+    <footer>How well did you do? Make sure to check out the 
+        <a id="highscores" href="#">highscores
+        </a>!
+    </footer>
 <script src="./script.js"></script>
 
 </html>

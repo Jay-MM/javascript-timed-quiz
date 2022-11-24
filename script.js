@@ -1,8 +1,4 @@
-// Acceptance Criteria
-//     WHEN all questions are answered or the timer reaches 0
-//     THEN the game is over
-//     WHEN the game is over
-//     THEN I can save my initials and score
+
 
 var myNav = document.querySelector('mynav')
 var timerEl = document.getElementById('timer');
@@ -59,8 +55,10 @@ var questions = [
 
     function checkAnswer() {
         if (this.value === questions[questionArray].answer) {
+            alert("That's right!")
             console.log("That's right!")
         } else {
+            alert("Oops! That is incorrect!  10 seconds have been docked!")
             console.log("Oops! That is incorrect!  10 seconds have been docked!")
             timeLeft -= 10;
             timerEl.textContent = timeLeft;
@@ -71,6 +69,7 @@ var questions = [
         
         if (questionArray === questions.length) {
             newScore = timeLeft;
+            gameOver();
         } else {
             renderQuestions();
         }
@@ -87,6 +86,43 @@ var questions = [
         questionList.appendChild(li);
         li.setAttribute("class", "answerBtn")
     });
+}
+
+function gameOver() {
+    clearInterval(countdownTimer);
+    h1.textContent = "GAME OVER!";
+    newDiv.removeChild(questionList);
+   
+    newScore = timeLeft; 
+    
+    var credentialInput = document.createElement('input')
+    var submitBtn = document.createElement('button')
+
+main.appendChild(credentialInput)
+submitBtn.textContent = "Please enter your initials: "
+button.appendChild(submitBtn);
+submitBtn.addEventListener('click', function(){
+    p.textContent = "User: " + credentialInput.value + " Score: " + newScore ;
+    localStorage.setItem("User: " , credentialInput.value);
+    localStorage.setItem("Score: ", newScore )
+    main.removeChild(credentialInput)
+    button.removeChild(submitBtn)
+
+    var replayBtn = document.createElement('button')
+     highScore = document.getElementById('highscores')
+    replayBtn.textContent = "Try Again?"
+    highScore.textContent = "High Score: " + localStorage.getItem("User: ") + " : " + localStorage.getItem("Score: ");
+    h1.textContent = "High Score: " + localStorage.getItem("User: ") + " : " + localStorage.getItem("Score: ");
+    main.appendChild(replayBtn);
+    replayBtn.addEventListener('click', function(){
+        location.reload()
+    })
+})
+
+
+
+   
+    
 }
 
 
@@ -109,7 +145,7 @@ startBtn.addEventListener("click", function() {
 
     if (timeLeft <= 0) {
         clearInterval(countdownTimer);
-        // game over function
+        gameOver()
     };
 }, 1000);
 })

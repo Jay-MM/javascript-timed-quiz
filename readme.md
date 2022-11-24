@@ -25,3 +25,5 @@ This is a browser application which consists of a multiple choice quiz on JavaSc
 
 ## live Site
 
+https://jay-mm.github.io/javascript-timed-quiz/
+
